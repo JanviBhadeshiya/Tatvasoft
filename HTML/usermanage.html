@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <!-- BOX ICONS CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./usermanage.css">
+</head>
+
+<body>
+    <header>
+        <div class="Navbar">
+            <div class="myNav">
+                <span>Helperland</span>
+            </div>
+            <div class="logout-btn">
+                <img src="./images/logout.png" alt="">
+            </div>
+            <div class="dropdown-res">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./images/admin-user.png" alt="">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#"> <img src="./images/admin-user.png" alt=""></a>
+                </div>
+            </div>
+            <div class="myNav_link myNav_link-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+            </nav>
+            <nav class="myNav_Items myNavItems-Right">
+                <div class="myNav_link user">
+                    <div class="dropdown">
+                        <img src="./images/admin-user.png" alt=""> <span>James Smith</span>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#"> <img src="./images/admin-user.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="logout">
+                    <img src="./images/logout.png" alt="">
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+            <ul class="nav flex-column text-white w-100">
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2">Dashboard
+                    </span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2"> New Service Requests</span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2">Upcoming Services</span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2">Service Schedule</span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2"> Service History</span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2">My Ratings</span>
+                </li>
+                <li href="#" class="mynav-link1">
+
+                    <span class="mx-2">Block Customer</span>
+                </li>
+            </ul>
+        </div>
+        <div class="p-1 my-new-container active-cont">
+            <nav class="navbar top-navbar navbar-light px-5">
+                <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
+            </nav>
+        </div>
+        <div class="my-table">
+            <table class="table-1 table table-hover">
+                <tbody>
+                    <tr>
+                        <td style="height: 20px;">Service Management</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Role Management</td>
+                    </tr>
+                    <tr class="sub-toggle">
+                        <td style="height: 20px;" id="demo">Coupon Code Management <img class="sub-transform"
+                                src="./images/forma-1_3.png" alt=""></td>
+                    </tr>
+                    <div>
+                        <tr class="my-submenu">
+                            <td style="height: 20px;">Coupon Code Management <img class="sub-transform"
+                                    src="./images/forma-1_3.png" alt=""></td>
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;">Coupon Codes</td>
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;"> Usage History</td>
+                        </tr>
+                    </div>
+                    <tr>
+                        <td style="height: 20px;">Escalation Management</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Service Requests</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Service Providers</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">User Management</td>
+                    </tr>
+                    <tr class="sub-toggle">
+                        <td style="height: 20px;">Finance Module<img class="sub-transform" src="./images/forma-1_3.png"
+                                alt=""></td>
+                    </tr>
+                    <div>
+                        <tr class="my-submenu">
+                            <td style="height: 20px;">Finance Module<img class="sub-transform"
+                                    src="./images/forma-1_3.png" alt=""></td>
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;">All Transactions</td>
+
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;"> Generate Payment</td>
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;"> Customer Invoices</td>
+                        </tr>
+                    </div>
+                    <tr>
+                        <td style="height: 20px;">Zip Code Management</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Rating Management</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Inquiry Management</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px;">Newsletter Management </td>
+                    </tr>
+                    <tr class="sub-toggle">
+                        <td>Content Management<img class="sub-transform" src="./images/forma-1_3.png" alt=""></td>
+                    </tr>
+                    <div>
+                        <tr class="my-submenu">
+                            <td style="height: 20px;">Content Management<img class="sub-transform"
+                                    src="./images/forma-1_3.png" alt=""></td>
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;">Blog</td>
+
+                        </tr>
+                        <tr class="my-submenu">
+                            <td style="height: 20px; padding-left: 34px;">FAQs</td>
+                        </tr>
+                    </div>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <div class="user-management">
+                    <p>User Management</p>
+                    <div>
+                        <button class="export-btn">
+                            <img src="./images/add.png" alt="">
+                            <a href="#">Add New User</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="user-information">
+                    <select class="user-name" name="" id="">
+                        <option value="">User name</option>
+                    </select>
+                    <select class="userrole-dropdown" name="" id="">
+                        <option value="">User role</option>
+                    </select>
+                    <select class="Country_Code" name="" id="">
+                        <option data-Country_Code="DZ" value="213">+49</option>
+                        <option data-Country_Code="AD" value="376">Andorra (+376)</option>
+                        <option data-Country_Code="AO" value="244">Angola (+244)</option>
+                        <option data-Country_Code="AI" value="1264">Anguilla (+1264)</option>
+                        <option data-Country_Code="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                        <option data-Country_Code="AR" value="54">Argentina (+54)</option>
+                        <option data-Country_Code="AM" value="374">Armenia (+374)</option>
+                        <option data-Country_Code="AW" value="297">Aruba (+297)</option>
+                        <option data-Country_Code="AU" value="61">Australia (+61)</option>
+                        <option data-Country_Code="AT" value="43">Austria (+43)</option>
+                        <option data-Country_Code="AZ" value="994">Azerbaijan (+994)</option>
+                        <option data-Country_Code="BS" value="1242">Bahamas (+1242)</option>
+                        <option data-Country_Code="BH" value="973">Bahrain (+973)</option>
+                        <option data-Country_Code="BD" value="880">Bangladesh (+880)</option>
+                        <option data-Country_Code="BB" value="1246">Barbados (+1246)</option>
+                        <option data-Country_Code="BY" value="375">Belarus (+375)</option>
+                        <option data-Country_Code="BE" value="32">Belgium (+32)</option>
+                        <option data-Country_Code="BZ" value="501">Belize (+501)</option>
+                        <option data-Country_Code="BJ" value="229">Benin (+229)</option>
+                        <option data-Country_Code="BM" value="1441">Bermuda (+1441)</option>
+                        <option data-Country_Code="BT" value="975">Bhutan (+975)</option>
+                        <option data-Country_Code="BO" value="591">Bolivia (+591)</option>
+                        <option data-Country_Code="BA" value="387">Bosnia Herzegovina (+387)</option>
+                        <option data-Country_Code="BW" value="267">Botswana (+267)</option>
+                        <option data-Country_Code="BR" value="55">Brazil (+55)</option>
+                        <option data-Country_Code="BN" value="673">Brunei (+673)</option>
+                        <option data-Country_Code="BG" value="359">Bulgaria (+359)</option>
+                        <option data-Country_Code="BF" value="226">Burkina Faso (+226)</option>
+                        <option data-Country_Code="BI" value="257">Burundi (+257)</option>
+                        <option data-Country_Code="KH" value="855">Cambodia (+855)</option>
+                        <option data-Country_Code="CM" value="237">Cameroon (+237)</option>
+                        <option data-Country_Code="CA" value="1">Canada (+1)</option>
+                        <option data-Country_Code="CV" value="238">Cape Verde Islands (+238)</option>
+                        <option data-Country_Code="KY" value="1345">Cayman Islands (+1345)</option>
+                        <option data-Country_Code="CF" value="236">Central African Republic (+236)</option>
+                        <option data-Country_Code="CL" value="56">Chile (+56)</option>
+                        <option data-Country_Code="CN" value="86">China (+86)</option>
+                        <option data-Country_Code="CO" value="57">Colombia (+57)</option>
+                        <option data-countryCod123456" value="269">Comoros (+269)</option>
+                        <option data-Country_Code="CG" value="242">Congo (+242)</option>
+                        <option data-Country_Code="CK" value="682">Cook Islands (+682)</option>
+                        <option data-Country_Code="CR" value="506">Costa Rica (+506)</option>
+                        <option data-Country_Code="HR" value="385">Croatia (+385)</option>
+                        <option data-Country_Code="CU" value="53">Cuba (+53)</option>
+                        <option data-Country_Code="CY" value="90392">Cyprus North (+90392)</option>
+                        <option data-Country_Code="CY" value="357">Cyprus South (+357)</option>
+                        <option data-Country_Code="CZ" value="42">Czech Republic (+42)</option>
+                        <option data-Country_Code="DK" value="45">Denmark (+45)</option>
+                        <option data-Country_Code="DJ" value="253">Djibouti (+253)</option>
+                        <option data-Country_Code="DM" value="1809">Dominica (+1809)</option>
+                        <option data-Country_Code="DO" value="1809">Dominican Republic (+1809)</option>
+                        <option data-Country_Code="EC" value="593">Ecuador (+593)</option>
+                        <option data-Country_Code="EG" value="20">Egypt (+20)</option>
+                        <option data-Country_Code="SV" value="503">El Salvador (+503)</option>
+                        <option data-Country_Code="GQ" value="240">Equatorial Guinea (+240)</option>
+                        <option data-Country_Code="ER" value="291">Eritrea (+291)</option>
+                        <option data-Country_Code="EE" value="372">Estonia (+372)</option>
+                        <option data-Country_Code="ET" value="251">Ethiopia (+251)</option>
+                        <option data-Country_Code="FK" value="500">Falkland Islands (+500)</option>
+                        <option data-Country_Code="FO" value="298">Faroe Islands (+298)</option>
+                        <option data-Country_Code="FJ" value="679">Fiji (+679)</option>
+                        <option data-Country_Code="FI" value="358">Finland (+358)</option>
+                        <option data-Country_Code="FR" value="33">France (+33)</option>
+                        <option data-Country_Code="GF" value="594">French Guiana (+594)</option>
+                        <option data-Country_Code="PF" value="689">French Polynesia (+689)</option>
+                        <option data-Country_Code="GA" value="241">Gabon (+241)</option>
+                        <option data-Country_Code="GM" value="220">Gambia (+220)</option>
+                        <option data-Country_Code="GE" value="7880">Georgia (+7880)</option>
+                        <option data-Country_Code="DE" value="49">Germany (+49)</option>
+                        <option data-Country_Code="GH" value="233">Ghana (+233)</option>
+                        <option data-Country_Code="GI" value="350">Gibraltar (+350)</option>
+                        <option data-Country_Code="GR" value="30">Greece (+30)</option>
+                        <option data-Country_Code="GL" value="299">Greenland (+299)</option>
+                        <option data-Country_Code="GD" value="1473">Grenada (+1473)</option>
+                        <option data-Country_Code="GP" value="590">Guadeloupe (+590)</option>
+                        <option data-Country_Code="GU" value="671">Guam (+671)</option>
+                        <option data-Country_Code="GT" value="502">Guatemala (+502)</option>
+                        <option data-Country_Code="GN" value="224">Guinea (+224)</option>
+                        <option data-Country_Code="GW" value="245">Guinea - Bissau (+245)</option>
+                        <option data-Country_Code="GY" value="592">Guyana (+592)</option>
+                        <option data-Country_Code="HT" value="509">Haiti (+509)</option>
+                        <option data-Country_Code="HN" value="504">Honduras (+504)</option>
+                        <option data-Country_Code="HK" value="852">Hong Kong (+852)</option>
+                        <option data-Country_Code="HU" value="36">Hungary (+36)</option>
+                        <option data-Country_Code="IS" value="354">Iceland (+354)</option>
+                        <option data-Country_Code="IN" value="91">India (+91)</option>
+                        <option data-Country_Code="ID" value="62">Indonesia (+62)</option>
+                        <option data-Country_Code="IR" value="98">Iran (+98)</option>
+                        <option data-Country_Code="IQ" value="964">Iraq (+964)</option>
+                        <option data-Country_Code="IE" value="353">Ireland (+353)</option>
+                        <option data-Country_Code="IL" value="972">Israel (+972)</option>
+                        <option data-Country_Code="IT" value="39">Italy (+39)</option>
+                        <option data-Country_Code="JM" value="1876">Jamaica (+1876)</option>
+                        <option data-Country_Code="JP" value="81">Japan (+81)</option>
+                        <option data-Country_Code="JO" value="962">Jordan (+962)</option>
+                        <option data-Country_Code="KZ" value="7">Kazakhstan (+7)</option>
+                        <option data-Country_Code="KE" value="254">Kenya (+254)</option>
+                        <option data-Country_Code="KI" value="686">Kiribati (+686)</option>
+                        <option data-Country_Code="KP" value="850">Korea North (+850)</option>
+                        <option data-Country_Code="KR" value="82">Korea South (+82)</option>
+                        <option data-Country_Code="KW" value="965">Kuwait (+965)</option>
+                        <option data-Country_Code="KG" value="996">Kyrgyzstan (+996)</option>
+                        <option data-Country_Code="LA" value="856">Laos (+856)</option>
+                        <option data-Country_Code="LV" value="371">Latvia (+371)</option>
+                        <option data-Country_Code="LB" value="961">Lebanon (+961)</option>
+                        <option data-Country_Code="LS" value="266">Lesotho (+266)</option>
+                        <option data-Country_Code="LR" value="231">Liberia (+231)</option>
+                        <option data-Country_Code="LY" value="218">Libya (+218)</option>
+                        <option data-Country_Code="LI" value="417">Liechtenstein (+417)</option>
+                        <option data-Country_Code="LT" value="370">Lithuania (+370)</option>
+                        <option data-Country_Code="LU" value="352">Luxembourg (+352)</option>
+                        <option data-Country_Code="MO" value="853">Macao (+853)</option>
+                        <option data-Country_Code="MK" value="389">Macedonia (+389)</option>
+                        <option data-Country_Code="MG" value="261">Madagascar (+261)</option>
+                        <option data-Country_Code="MW" value="265">Malawi (+265)</option>
+                        <option data-Country_Code="MY" value="60">Malaysia (+60)</option>
+                        <option data-Country_Code="MV" value="960">Maldives (+960)</option>
+                        <option data-Country_Code="ML" value="223">Mali (+223)</option>
+                        <option data-Country_Code="MT" value="356">Malta (+356)</option>
+                        <option data-Country_Code="MH" value="692">Marshall Islands (+692)</option>
+                        <option data-Country_Code="MQ" value="596">Martinique (+596)</option>
+                        <option data-Country_Code="MR" value="222">Mauritania (+222)</option>
+                        <option data-Country_Code="YT" value="269">Mayotte (+269)</option>
+                        <option data-Country_Code="MX" value="52">Mexico (+52)</option>
+                        <option data-Country_Code="FM" value="691">Micronesia (+691)</option>
+                        <option data-Country_Code="MD" value="373">Moldova (+373)</option>
+                        <option data-Country_Code="MC" value="377">Monaco (+377)</option>
+                        <option data-Country_Code="MN" value="976">Mongolia (+976)</option>
+                        <option data-Country_Code="MS" value="1664">Montserrat (+1664)</option>
+                        <option data-Country_Code="MA" value="212">Morocco (+212)</option>
+                        <option data-Country_Code="MZ" value="258">Mozambique (+258)</option>
+                        <option data-Country_Code="MN" value="95">Myanmar (+95)</option>
+                        <option data-Country_Code="NA" value="264">Namibia (+264)</option>
+                        <option data-Country_Code="NR" value="674">Nauru (+674)</option>
+                        <option data-Country_Code="NP" value="977">Nepal (+977)</option>
+                        <option data-Country_Code="NL" value="31">Netherlands (+31)</option>
+                        <option data-Country_Code="NC" value="687">New Caledonia (+687)</option>
+                        <option data-Country_Code="NZ" value="64">New Zealand (+64)</option>
+                        <option data-Country_Code="NI" value="505">Nicaragua (+505)</option>
+                        <option data-Country_Code="NE" value="227">Niger (+227)</option>
+                        <option data-Country_Code="NG" value="234">Nigeria (+234)</option>
+                        <option data-Country_Code="NU" value="683">Niue (+683)</option>
+                        <option data-Country_Code="NF" value="672">Norfolk Islands (+672)</option>
+                        <option data-Country_Code="NP" value="670">Northern Marianas (+670)</option>
+                        <option data-Country_Code="NO" value="47">Norway (+47)</option>
+                        <option data-Country_Code="OM" value="968">Oman (+968)</option>
+                        <option data-Country_Code="PW" value="680">Palau (+680)</option>
+                        <option data-Country_Code="PA" value="507">Panama (+507)</option>
+                        <option data-Country_Code="PG" value="675">Papua New Guinea (+675)</option>
+                        <option data-Country_Code="PY" value="595">Paraguay (+595)</option>
+                        <option data-Country_Code="PE" value="51">Peru (+51)</option>
+                        <option data-Country_Code="PH" value="63">Philippines (+63)</option>
+                        <option data-Country_Code="PL" value="48">Poland (+48)</option>
+                        <option data-Country_Code="PT" value="351">Portugal (+351)</option>
+                        <option data-Country_Code="PR" value="1787">Puerto Rico (+1787)</option>
+                        <option data-Country_Code="QA" value="974">Qatar (+974)</option>
+                        <option data-Country_Code="RE" value="262">Reunion (+262)</option>
+                        <option data-Country_Code="RO" value="40">Romania (+40)</option>
+                        <option data-Country_Code="RU" value="7">Russia (+7)</option>
+                        <option data-Country_Code="RW" value="250">Rwanda (+250)</option>
+                        <option data-Country_Code="SM" value="378">San Marino (+378)</option>
+                        <option data-Country_Code="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+                        <option data-Country_Code="SA" value="966">Saudi Arabia (+966)</option>
+                        <option data-Country_Code="SN" value="221">Senegal (+221)</option>
+                        <option data-Country_Code="CS" value="381">Serbia (+381)</option>
+                        <option data-Country_Code="SC" value="248">Seychelles (+248)</option>
+                        <option data-Country_Code="SL" value="232">Sierra Leone (+232)</option>
+                        <option data-Country_Code="SG" value="65">Singapore (+65)</option>
+                        <option data-Country_Code="SK" value="421">Slovak Republic (+421)</option>
+                        <option data-Country_Code="SI" value="386">Slovenia (+386)</option>
+                        <option data-Country_Code="SB" value="677">Solomon Islands (+677)</option>
+                        <option data-Country_Code="SO" value="252">Somalia (+252)</option>
+                        <option data-Country_Code="ZA" value="27">South Africa (+27)</option>
+                        <option data-Country_Code="ES" value="34">Spain (+34)</option>
+                        <option data-Country_Code="LK" value="94">Sri Lanka (+94)</option>
+                        <option data-Country_Code="SH" value="290">St. Helena (+290)</option>
+                        <option data-Country_Code="KN" value="1869">St. Kitts (+1869)</option>
+                        <option data-Country_Code="SC" value="1758">St. Lucia (+1758)</option>
+                        <option data-Country_Code="SD" value="249">Sudan (+249)</option>
+                        <option data-Country_Code="SR" value="597">Suriname (+597)</option>
+                        <option data-Country_Code="SZ" value="268">Swaziland (+268)</option>
+                        <option data-Country_Code="SE" value="46">Sweden (+46)</option>
+                        <option data-Country_Code="CH" value="41">Switzerland (+41)</option>
+                        <option data-Country_Code="SI" value="963">Syria (+963)</option>
+                        <option data-Country_Code="TW" value="886">Taiwan (+886)</option>
+                        <option data-Country_Code="TJ" value="7">Tajikstan (+7)</option>
+                        <option data-Country_Code="TH" value="66">Thailand (+66)</option>
+                        <option data-Country_Code="TG" value="228">Togo (+228)</option>
+                        <option data-Country_Code="TO" value="676">Tonga (+676)</option>
+                        <option data-Country_Code="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+                        <option data-Country_Code="TN" value="216">Tunisia (+216)</option>
+                        <option data-Country_Code="TR" value="90">Turkey (+90)</option>
+                    </select>
+                    <input type="" placeholder="Phone number" name="" id="Phone">
+                    <input type="" placeholder="Zipcode" name="" id="Zipcode">
+                    <button class="search_button">Search</button>
+                    <button class="clear_button">Clear</button>
+                </div>
+                <table class="table-2 table table-hover ">
+                    <thead class="head">
+                        <div>
+                            <tr>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>User Name</div>
+                                        <div><img class="sort" src="./images/sort.png" alt=""></div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>User Type</div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div> Role</div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>Postal Code</div>
+                                        <div><img class="sort" src="./images/sort.png" alt=""></div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>City</div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>Radius</div>
+                                        <div><img class="sort" src="./images/sort.png" alt=""></div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>User Status</div>
+                                        <div><img class="sort" src="./images/sort.png" alt=""></div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="table-heads">
+                                        <div>Actions</div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </div>
+            </div>
+            </thead>
+            <tbody>
+                <!-- 1 -->
+                <tr>
+                    <td style="padding-top: 20px;">Lyum watson</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Call Center
+                            </div>
+                        </div>
+                    </td>
+                    <td>Inquiry Manager<br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                    <td> 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>    
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 2 -->
+                <tr>
+                    <td style="padding-top: 20px;">323437</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Service Provider
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td>10 KM</td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>    
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 3 -->
+                <tr>
+                    <td style="padding-top: 20px;">323438</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                               Customer
+                            </div>
+                        </div>
+                    </td>
+                    <td>Inquiry Manager<br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 4 -->
+                <tr>
+                    <td style="padding-top: 20px;">323439</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Call Center
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 5 -->
+                <tr>
+                    <td style="padding-top: 20px;">323440</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Call Center
+                            </div>
+                        </div>
+                    </td>
+                    <td>Content Manager<br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 6 -->
+                <tr>
+                    <td style="padding-top: 20px;">323441</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Customer
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="complete-button">Inactive</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 7 -->
+                <tr>
+                    <td style="padding-top: 20px;">323442</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Service Provider
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td>10 KM</td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 8 -->
+                <tr>
+                    <td style="padding-top: 20px;">323443</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Call Center
+                            </div>
+                        </div>
+                    </td>
+                    <td>Finance Manager<br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 9 -->
+                <tr>
+                    <td style="padding-top: 20px;">323444</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                               Customer
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+                <!-- 10 -->
+                <tr>
+                    <td style="padding-top: 20px;">323445</td>
+                    <td>
+                        <div class="custom-detail">
+                            <div class="custom-date">
+                                Customer
+                            </div>
+                        </div>
+                    </td>
+                    <td><br>
+                        <div></div>
+                    </td>
+                    <td style="padding-top: 20px;">123456</td>
+
+                    <td>Berlin</td>
+                    <td></td>
+
+                    <td><button class="active-btn">Active</button></td>
+                     <td> 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./images/group-38.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" id="text" >
+                                <a class="dropdown-item" href="#"><span>Edit</span><br><span>Deactivate</span></a>
+                            </div>
+                        </div></td>
+                </tr>
+            </tbody>
+            </table>
+            <div>©2018 Helperland. All rights reserved.</div>
+        </div>
+        </div>
+    </main>
+    <script>
+        function no_refresh_fun(e) {
+            e.preventDefault();
+        }
+        function classToggle() {
+            const navs = document.querySelectorAll('.myNav_Items');
+            navs.forEach(nav => nav.classList.toggle('NavbarToggleShow'));
+        }
+        document.querySelector('.myNav_link-toggle')
+            .addEventListener('click', classToggle);
+    </script>
+    <script>
+        var menu_button = document.querySelector("#menu-btn");
+        var side_bar = document.querySelector("#sidebar");
+        var myContainer = document.querySelector(".my-new-container");
+        menu_button.addEventListener("click", () => {
+            side_bar.classList.toggle("active-nav");
+            myContainer.classList.toggle("active-cont");
+        });</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+</body>
+</html>
