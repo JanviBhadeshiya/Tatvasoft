@@ -27,7 +27,7 @@
                 <button id="priceandservice" href="#">Prices & service</button>
                 <a class="header-navbar" href="#">Warranty</a>
                 <a class="header-navbar" href="#">Blog</a>
-                <a class="header-navbar" href="#">Contact</a>
+                <a class="header-navbar" href="ContactUs.php">Contact</a>
                 <button id="loginbttn" class="sp-btn">Login</button>
                 <button id="becomehelper" class="sp-btn">Become a Helper</button>
           </div>
