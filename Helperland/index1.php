@@ -15,8 +15,8 @@ if(isset($_GET['parameter']) && $_GET['parameter'] !=''){
     $parameter= $_GET['parameter'];
 }
 
-if(file_exists('Controller/'.$controller.'Controller.php')){
-    include('Controller/'.$controller.'Controller.php');
+if(file_exists('Controller/controller.php')){
+    include('Controller/controller.php');
     $class = $controller.'Controller';
     $obj = new $class();
     if(method_exists($class,$function)){
