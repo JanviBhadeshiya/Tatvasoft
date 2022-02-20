@@ -117,6 +117,77 @@ class Helperland
             header('Location:' . $base_url);
         }
     }
+    // public function CityLocation($pincode)
+    // {
+
+    //     $sql  = " SELECT
+    //     zipcode.ZipcodeValue,
+    //     city.CityName, state.StateName  FROM zipcode 
+    //   JOIN city
+    //     ON zipcode.CityId = city.Id  AND ZipcodeValue = $pincode
+	// 	JOIN state 
+    //     ON state.Id = city.StateId";
+    //     $stmt =  $this->conn->prepare($sql);
+    //     $stmt->execute();
+
+    //     $row  = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    //     $zipcode= $row['ZipcodeValue'];
+    //     $city = $row['CityName'];
+    //     $state = $row['StateName'];
+
+    //     return array($city, $state);
+    // }
+    public function InsertAddress($array)
+    {
+        $sql = "INSERT INTO useraddress (UserId , AddressLine1	 , AddressLine2 , City ,  PostalCode , Mobile , Email )
+        VALUES ('2' , :street ,  :houseno  , :city , :postal , :mobilenum , NULL )";
+        $stmt =  $this->conn->prepare($sql);
+        $result = $stmt->execute($array);
+        return $array;
+    
+    }
+    public function getaddress($mobilenum){
+      
+            $sql="SELECT * from useraddress WHERE Mobile='$mobilenum'";
+            $stmt =  $this->conn->prepare($sql);
+            $stmt->execute();
+          
+                $row  = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+                
+            
+           
+             //   $output=mysqli_query($this->conn , "SELECT *   useraddress");
+             //   $out=mysqli_fetch_assoc($output);
+            return $row;
+        
+         
+
+    }
+    public function CompleteBooking($array){
+
+          $sql = "INSERT INTO servicerequest(ZipCode,TotalCost, ServiceHours, ServiceStartDate,Comments, HasPets)
+        
+         VALUES (:zipcode,:total_pay,:total_time,:date_sp,:comments,:pets)";
+        // $sql="INSERT INTO servicerequest(UserId,  ServiceStartDate, ZipCode,ServiceHours, ExtraHours, SubTotal)
+        // VALUES ('2','45',:zipcode,'4','300','45')";
+        
+         $stmt =  $this->conn->prepare($sql);
+         $result = $stmt->execute($array);
+        //  return $array;
+         if ($result) {
+           
+            return "Your request has been made";
+        } else {
+            
+            return "your account is not created please try again";
+        }
+
+
+
+    }
+
 
 
 }
