@@ -117,27 +117,7 @@ class Helperland
             header('Location:' . $base_url);
         }
     }
-    // public function CityLocation($pincode)
-    // {
 
-    //     $sql  = " SELECT
-    //     zipcode.ZipcodeValue,
-    //     city.CityName, state.StateName  FROM zipcode 
-    //   JOIN city
-    //     ON zipcode.CityId = city.Id  AND ZipcodeValue = $pincode
-	// 	JOIN state 
-    //     ON state.Id = city.StateId";
-    //     $stmt =  $this->conn->prepare($sql);
-    //     $stmt->execute();
-
-    //     $row  = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    //     $zipcode= $row['ZipcodeValue'];
-    //     $city = $row['CityName'];
-    //     $state = $row['StateName'];
-
-    //     return array($city, $state);
-    // }
     public function InsertAddress($array)
     {
         $sql = "INSERT INTO useraddress (UserId , AddressLine1	 , AddressLine2 , City ,  PostalCode , Mobile , Email )
