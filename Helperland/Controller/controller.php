@@ -204,6 +204,121 @@ class HelperlandController
            
         }
     }
+    
+    public function newaddress(){
+        if (isset($_POST)) {
+            $street = $_POST['street'];
+            $houseno = $_POST['houseno'];
+            $pincode = $_POST['postal'];
+            $city = $_POST['city'];
+            $mobilenum = $_POST['mobilenum'];
+            // $email = $_POST['username'];
+            // $result = $this->model->ResetKey($email);
+            // $userid = $result[3];
+            $type = 0;
+            // $getstate = $this->model->CityLocation($pincode);
+            // $state = $getstate[1];
+            $array = [
+                // 'userid' => $userid,
+                'street' => $street,
+                'houseno' => $houseno,
+                'postal' => $pincode,
+                'city' => $city,
+                // 'state' => $state,
+               
+                'mobilenum' => $mobilenum,
+                // 'email' => $email,
+                // 'type' => $type,
+
+            ];
+            
+            
+            $result = $this->model->InsertAddress($array);
+            print_r ($result);
+                       
+
+        }
+    }
+    public function GetAddress()
+    {
+        if (isset($_POST)) {
+            // $email = $_POST['username'];
+            $mobilenum = $_POST['mobilenum'];
+            $result = $this->model->GetAddress($mobilenum);
+            // echo $result ;
+            if (count($result)) {
+                foreach ($result as $row) {
+                    $street = $row['AddressLine1'];
+                    $houseno = $row['AddressLine2'];
+                    $city = $row['City'];
+                    $pincode = $row['PostalCode'];
+                    $mobile = $row['Mobile'];
+                    $isdefault = $row['IsDefault'];
+                    $isdeleted = $row['IsDeleted'];
+                    $addressid = $row['AddressId'];
+                    if ($isdefault == 1) {
+                        $isdefault =  'checked';
+                    } else {
+                        $isdefault = '';
+                    }
+                    if ($isdeleted == 0) {
+                        $output = '<div class="radio_address my-2">
+                        <div class="row">
+                            <div class="col-1" style="margin: auto;width: 100%;">
+                                <input type="radio" id="address_ckbox" name="address" value= ' . $addressid.'
+                                    style="margin: 0 auto;">
+                            </div>
+                            <div class="col-11">
+                                <label for="address2">
+                                    <p style="margin-bottom: 0px;"><b>Address:</b> '. $street .' ' . $houseno . ' , 
+                                        '.$city.'  
+                                    </p>
+                                    <p style="margin-bottom: 0px;"><b>Phone number:</b> '. $mobile .'</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>' ;
+
+                        echo $output;
+                    }
+                   
+                }
+            
+        }
+    }
+}
+   public function completebooking(){
+       if(isset($_POST)){
+        $base_url = "http://localhost:8080/Final_Homepage/View/book_service.php";
+        $zipcode= $_POST['zipcode'];
+        $total_pay= $_POST['total_pay'];
+        $total_time= $_POST['total_time'];
+        $date= $_POST['date_sp'];
+        $comments= $_POST['comments'];
+        $pets= $_POST['pets'];
+        // $promo= $_POST['promo'];
+        // $card_name= $_POST['card_name'];
+        // $mmyy= $_POST['mmyy'];
+        // $cvc= $_POST['cvc'];
+         
+        
+        $array = [
+            'zipcode' => $zipcode,
+            'total_pay' =>  $total_pay ,
+            'total_time' =>  $total_time,
+            'date_sp' =>  $date,
+            'comments' =>  $comments,
+            'pets' =>  $pets,
+            // 'promo' =>  $promo,
+            // 'card_name'  =>  $card_name,
+            // 'mmyy'  => $mmyy,
+            // 'cvc'  =>  $cvc,
+        ];
+        $result = $this->model->CompleteBooking($array);
+       }
+       print_r($result);
+       
+   }
 
 }    
 ?>
