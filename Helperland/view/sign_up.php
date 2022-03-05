@@ -57,41 +57,41 @@ $base_url="../index1.php";
     <form method="post"  action=<?= $base_url."./?controller=helperland&function=InsertUser"?>>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="First Name" require>
+            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="First Name" required>
             <div class="first-name-msg"></div>
 
           </div>
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="lastname"name="lastname" placeholder="Last Name" require>
+            <input type="text" class="form-control" id="lastname"name="lastname" placeholder="Last Name" required>
             <div class="last-name-msg"></div>  
           </div>
         </div>
   
         <div class="form-row">
             <div class="form-group col-md-6">
-              <input type="email" class="form-control check_email" id="useremail" name="email" placeholder="E-mail address" require>
+              <input type="email" class="form-control check_email" id="useremail" name="email" placeholder="E-mail address" required>
               <div class="email-msg float-left"></div>
               <div class="error-email float-right"></div> 
 
             </div>
             <div class="form-group col-md-6">
-                <label class="sr-only" for="inlineFormInputGroup" require>Username</label>
+                <label class="sr-only" for="inlineFormInputGroup" required>Username</label>
                 <div class="input-group mb-2">
                   <div class="input-group-prepend">
                     <div class="input-group-text">+49</div>
                   </div>
-                  <input type="tel" class="form-control" id="mobilenum" name="mobile" placeholder="Mobile number" maxlength="10" size="10" require>
+                  <input type="tel" class="form-control" id="mobilenum" name="mobile" placeholder="Mobile number" maxlength="10" size="10" required>
                 </div>
                 <div class="mobile-msg"></div>
               </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <input type="password" class="form-control" id="password" name="password" placeholder="Password" require>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
        <div class="password-msg"></div>
         </div>
         <div class="form-group col-md-6">
-          <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" require>
+          <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
           <div class="cpassword-msg"></div>
 
         </div>
