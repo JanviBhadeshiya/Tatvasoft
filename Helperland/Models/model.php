@@ -68,10 +68,10 @@ class Helperland
         $count = $stmt->rowCount();
         return array($username, $resetkey, $count);
     }
-    public function resetpass($data){
+    public function resetpass($array){
         $sql = "UPDATE user SET Password = :password , ModifiedDate = :updatedate , ModifiedBy = :modifiedby WHERE ResetKey = :resetkey";
         $stmt =  $this->conn->prepare($sql);
-        $result = $stmt->execute($data);
+        $result = $stmt->execute($array);
         
         if($result){
             $_SESSION['msg']="New Password set !";
@@ -84,13 +84,13 @@ class Helperland
     }
 
     public function Login($email,$pass){
-        $sql="select * from user where Email = '$email'";
+        $sql="SELECT * from user where Email = '$email'";
         $stmt=$this->conn->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $count=$stmt->rowCount();
         $usertypeid = $row['UserTypeId'];
-        $customer = "http://localhost:8080/Final_Homepage/view/faq.php";
+        $customer = "http://localhost:8080/Final_Homepage/view/index.php";
         $service_provider = "http://localhost:8080/Final_Homepage/view/contactus.php";
         $base_url = "http://localhost:8080/Final_Homepage/view/index.php";
 
@@ -98,16 +98,16 @@ class Helperland
             if ($pass == $row['Password']){
                 if ($usertypeid == 0) {
                     $_SESSION['username'] = $email;
-                    
+                    $_SESSION['for_login']='login success';
                     header('Location:' . $customer);
                 } else if ($usertypeid == 1) {
                     $_SESSION['username'] = $email;
-                    
+                    $_SESSION['for_login']='login success';
                     header('Location:' . $service_provider);
                 }
             }else{
                
-                $_SESSION['for_login']="Invalid Password";
+                $_SESSION['for_login']='invalidpass';
                 header('Location:' . $base_url);
             }
         }else{
@@ -117,7 +117,27 @@ class Helperland
             header('Location:' . $base_url);
         }
     }
+    // public function CityLocation($pincode)
+    // {
 
+    //     $sql  = " SELECT
+    //     zipcode.ZipcodeValue,
+    //     city.CityName, state.StateName  FROM zipcode 
+    //   JOIN city
+    //     ON zipcode.CityId = city.Id  AND ZipcodeValue = $pincode
+	// 	JOIN state 
+    //     ON state.Id = city.StateId";
+    //     $stmt =  $this->conn->prepare($sql);
+    //     $stmt->execute();
+
+    //     $row  = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    //     $zipcode= $row['ZipcodeValue'];
+    //     $city = $row['CityName'];
+    //     $state = $row['StateName'];
+
+    //     return array($city, $state);
+    // }
     public function InsertAddress($array)
     {
         $sql = "INSERT INTO useraddress (UserId , AddressLine1	 , AddressLine2 , City ,  PostalCode , Mobile , Email )
@@ -166,6 +186,71 @@ class Helperland
 
 
 
+    }
+    public function servicedetails(){
+        $sql="SELECT * from servicerequest";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute();
+      
+            $row  = $stmt->fetchAll(PDO::FETCH_ASSOC);     
+        
+        return $row;
+    }
+    public function servicehistory(){
+        $sql="SELECT * from servicerequest";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute();
+      
+            $row  = $stmt->fetchAll(PDO::FETCH_ASSOC);     
+        
+        return $row;
+    }
+    public function Getaddress2($mobilenum){
+      
+        $sql="SELECT * from useraddress WHERE UserId='$mobilenum' and IsDeleted=0";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute();
+      
+            $row  = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            
+        
+       
+         //   $output=mysqli_query($this->conn , "SELECT *   useraddress");
+         //   $out=mysqli_fetch_assoc($output);
+        return $row;
+    }
+    public function updateaddress($mobilenum){
+        $sql="UPDATE useraddress SET IsDeleted=1 WHERE AddressId='$mobilenum'";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute();
+      
+            $row  = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return 'success';
+    }
+    public function GetUserDetails($email)
+    {
+        $sql = "SELECT * from user where Email = '$email'";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute();
+        $result  = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    public function UpdateCustomerAddress($array)
+    {
+        $sql = "UPDATE `useraddress` SET `AddressLine1`= :street ,`AddressLine2`= :houseno,`City`=:location,`State`= :state ,`PostalCode`= :pincode ,`Mobile`=:mobilenum WHERE `AddressId` = :addressid ";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute($array);
+        $count = $stmt->rowCount();
+        return array($count);
+    }
+    public function update_Customer($array)
+    {
+        $sql = "UPDATE `user` SET `FirstName`= :fistname,`LastName`=:lastname,`Mobile`=:mobile,`DateOfBirth`= :birthdate WHERE `Email`=:email";
+        $stmt =  $this->conn->prepare($sql);
+        $stmt->execute($array);
+        $count = $stmt->rowCount();
+        return array($count);
     }
 
 
