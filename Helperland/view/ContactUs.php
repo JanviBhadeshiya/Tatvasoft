@@ -88,8 +88,8 @@
         <div class="contact-hr mt-5"></div>
         <div class="row">
           <p class="contact-form-heading">Get in touch with us</p>
-        </div>
-        <?php $base_url='../index1.php'?>
+        </div><?php $base_url='../index1.php'?>
+        <div class="form_container">
       <form method="POST" action=<?= $base_url."./?controller=helperland&function=ContactUs"?>>
         <div class="contact-form-content mt-5">
           <div class="r1">
@@ -145,6 +145,7 @@
           </div>
         </div>
       </form>
+        </div>
     </div>
 
     <div class="contact-map">

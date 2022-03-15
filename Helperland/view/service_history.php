@@ -307,7 +307,7 @@
                         <!-- edit address -->
                         <div class="add_new_address" id="edit_address" style="display: none;">
                       
-                      <form method="POST">
+                      <!-- <form method="POST">
                           <div class="row">
                               <div class="col-md-6">
                                   <label for="street_name"  class="m-1" >Street Name</label>
@@ -341,10 +341,10 @@
                               </div>
                           </div>
 
-                          <button class="buttonaccept edit_address" id="save_address_btn" onclick="updateaddress()"  style="padding: 5px 15px;">Edit</button>
+                          <button type="button" class="buttonaccept edit_address" id="save_address_btn" onclick="edit_address_MYSETTING()"  style="padding: 5px 15px;">Edit</button>
                           <button class="buttonaccept" type="button" onclick="cancel_address()">Cancel</button>
 
-                      </form>
+                      </form> -->
 
                   </div>
                                                <!-- change password -->

@@ -24,7 +24,7 @@
     }
     if(isset($_SESSION['for_login']) ){
         echo '<script>alert("'.$_SESSION['for_login'].'")</script>';
-        unset($_SESSION['forget1']);
+        unset($_SESSION['for_login']);
     }
     if(isset($_SESSION['msg']) ){
         echo '<script>alert("'.$_SESSION['msg'].'")</script>';
@@ -45,7 +45,7 @@
             <img src="../assets/img/footer-logo.png" id="header_logo">
           </a>
           <div class=" text-center">
-            <a class="cleaner header-navbar" href="book_service.php">Book a Cleaner</a>
+            <a class="cleaner header-navbar becomehelper " href="book_service.php">Book a Cleaner</a>
             <a class="header-navbar" href="prices.php">Prices</a>
             <a class="header-navbar" href="#">Our Guarantee</a>
             <a class="header-navbar" href="#">Blog</a>
@@ -53,7 +53,7 @@
             <button id="loginbttn" class="sp-btn"data-toggle="modal" onclick="login()" data-target="#myModal">Login</button>
             
                                 
-            <a href="become_A_provider.php" id="becomehelper" ">Become a Helper</a>
+            <a href="become_A_provider.php" class="becomehelper" >Become a Helper</a>
 
             <a data-bs-toggle="dropdown" class="header-navbar" href="#"><img class="px-2 py-0"
                     src="../assets/img/ic-flag.png" alt="flag"><svg xmlns="http://www.w3.org/2000/svg"
@@ -155,9 +155,11 @@
               <form method="POST" action=<?=$base_url."./?controller=helperland&function=login"?>>
               
                 <div class="popup-content" id="popup-content">
-                <span class="close"> &times;</span>
-                <input type="text" name="loginemail" placeholder="Email" require>
-                <input type="password"  name="password"placeholder="Password" require>
+                <span class="close"><h3> &times;</h3></span>
+                <div style="padding-top: 20px;">
+                <input type="text" name="loginemail" placeholder="Email" required>
+                <input type="password"  name="password"placeholder="Password" required>
+                </div>
                 <button id="loginbttn2"  type="submit" name="login_submit" class="sp-btn"data-toggle="modal">Login</button>
                  <div><a href="#" style="color: #0d6efd;"onclick="forget_password();">Forget Password</a></div>
                 <div>Don't Have Account? <a href="../View/sign_up.php" style="color: #0d6efd;">Create Account</a></div> 
@@ -168,10 +170,11 @@
               <form method="POST" action=<?= $base_url."./?controller=helperland&function=ForgotMail"?>>
                 
                 <div class="popup-content" id="popup-content">
-                <span class="close1"> &times;</span>
-                <h1>Forget_Password</h1>
-                <input type="text" name="forget" placeholder="Email">
-                <button id="loginbttn2" type="submit" name="forget_submit" class="sp-btn"data-toggle="modal">Submit</button>                              
+                <span class="close1"> <h3>&times;</h3></span>
+                
+                <label for="email">Forget Password</label>
+                <input type="text" id="email" name="forget" placeholder="Email" required>
+                <button  id="loginbttn2" type="submit" name="forget_submit" class="sp-btn"data-toggle="modal">Submit</button>                              
                 </div>
                 </form>
               </div>  
