@@ -106,7 +106,7 @@ $base_url = "http://localhost:8080/Helperland/";
         </div>
     </section>
     <section class="maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14686.79219931298!2d72.5004358!3d23.0348564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc9d4dae36889fb9!2sTatvaSoft!5e0!3m2!1sen!2sin!4v1639749098244!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="map"></iframe>
+    <img src="./assets/Image/group-16.png" class="img-fluid price-banner" alt="Responsive image">
     </section>
     <section class="newsletter text-center ">
         <div class="container">

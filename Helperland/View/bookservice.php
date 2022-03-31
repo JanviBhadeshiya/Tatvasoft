@@ -320,13 +320,7 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                                 <div class="row">
                                                 <input class="input-element" type="date" id="formdate" name="formdate" data placeholder="From Date">
                                                 <input class="input-element" type="time" id="formtime" name="formtime" data placeholder="From Time">
-                                                <!-- <select name="booktime" id="booktime">
-                                                    <option value="2:00 PM">2:00 PM</option>
-                                                    <option value="3:00 PM">3:00 PM</option>
-                                                    <option value="4:00 PM">4:00 PM</option>
-                                                    <option value="5:00 PM">5:00 PM</option>
-                                                    <option value="6:00 PM">6:00 PM</option>
-                                                </select> -->
+                                               
                                                 </div>
                                             </div>
                                         </div>
@@ -413,16 +407,7 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                 <div class="tab-pane  fade" id="pills-YourDetails" role="tabpanel" aria-labelledby="pills-YourDetails-tab">
                                     <span class="text-1 temp"><b>Please enter your address so that your helper can find you.</b></span>
                                     <div class="row address"  id="add">
-                                        <!-- <label class="area-label">
-                                            <input type="radio" class="area-radio" id="age1" name="age" value="30" onclick="getseladd(this.id)">
-                                            <span><b>Address:</b></span> Abcd 45, Bonn 53225 <br>
-                                            <span><b>Telephone number:</b></span> 9988556644
-                                        </label>
-                                        <label class="area-label">
-                                            <input type="radio" class="area-radio" id="age2" name="age" value="30" onclick="getseladd(this.id)">
-                                            <span><b>Address:</b></span> Abcd 45, Bonn 53225 <br>
-                                            <span><b>Telephone number:</b></span> 9988556644
-                                        </label> -->
+                                    
                                     </div>
                                     <div class="row">
                                         <div class="address-left">
@@ -434,21 +419,21 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="streetname">Street name</label><br>
-                                                    <input class="input streetname" type="text" name="streetname" placeholder="Street name">
+                                                    <input class="input streetname" type="text" name="streetname" placeholder="Street name" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="housenumber">House number</label><br>
-                                                    <input class="input housenumber" type="text" name="housenumber" placeholder="House number">
+                                                    <input class="input housenumber" type="text" name="housenumber" placeholder="House number" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="postalcode">Postal code</label><br>
-                                                    <input class="input postal_code" type="text" name="postalcode" placeholder="360005">
+                                                    <input class="input postal_code" type="text" name="postalcode" placeholder="Pincode" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="city">City</label><br>
-                                                    <input class="input city" type="text" name="city" placeholder="Bonn">
+                                                    <input class="input city" type="text" name="city" placeholder="Bonn" required>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -456,7 +441,7 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                                     <label for="phonenumber">Phone number</label><br>
                                                     <div class="input-group">
                                                         <span class="input-group-text" id="basic-addon1">+49</span>
-                                                        <input type="text" class="phonenumber" id="phonenumber" name="phonenumber" placeholder="9745643546" required>
+                                                        <input type="text" class="phonenumber" id="phonenumber" name="phonenumber" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -553,23 +538,14 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                     <div class=" col-8 text-1">Per cleaning</div>
                                     <div class="charge col-4 text-1"></div>
                                 </div>
-                                <!-- <div class="row">
-                                    <div class="col-8 text-1">Discount</div>
-                                    <div class="col-4 text-1">- $27</div>
-                                </div> -->
+                               
                             </div>
                             <div class="payment-text3">
                                 <div class="row">
                                     <div class=" text-4 col-8">Total Payment</div>
                                     <div class="totalpayment text-5 col-4"><b></b></div>
                                 </div>
-                                <!-- <div class="row">
-                                    <div class="text-1 col-8 pt-1 pb-1">Effective Price</div>
-                                    <div class="text-6 col-4"><b>$50.4</b></div>
-                                </div>
-                                <div class="row">
-                                    <span class="text-7"><span class="text-danger"><b>*</b></span>You will save 20% according to §35a EStG.</span>
-                                </div> -->
+                                
                             </div>
                             <div class="payment-text4">
                                 <img src="./assets/Image/smiley.png" alt="smiley"> 
@@ -578,100 +554,38 @@ if (!isset($_SESSION['loggedin'])) { ?>
                                 </span>
                             </div>
                         </div>
-                        <div class="questions">
+                      
+                        <div class="question">
                             <div class="questions-header">
                                 <b>Questions?</b>
                             </div>
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingFive">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingSix">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingSeven">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                                            Which Helperland professional will come to my place?
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="for-more-help">
+
+                        <p class="accordion">
+                            <img src="./assets/Image/right-arrow-grey.png" alt="" >&nbsp;
+                            What's included in training?
+                        </p>
+                        
+
+                        <hr>
+                        <p class="accordion">
+                            <img src="./assets/Image/right-arrow-grey.png" alt="" >&nbsp;
+                            Which helperland profession will come to my place?
+                        </p>
+                       
+
+                        <hr>
+                        <p class="accordion">
+                            <img src="./assets/Image/right-arrow-grey.png" alt="" ">&nbsp;
+                            Can I skip or Reschedule booking?
+                        </p>
+                    
+
+                        <hr>
+
+                        <div class="for-more-help">
                                 <b>For more help</b>
-                            </div>
                         </div>
+                    </div>
                     </div>
                 </div>
                 
@@ -683,9 +597,9 @@ if (!isset($_SESSION['loggedin'])) { ?>
 
 
 
-    <!--tab and accodian ended-->
+    
 
-    <!--get newsletter-->
+    
     <section class="section-5 container-fluid  justify-content-center">
       <div class=" msg-box">
         <span class="GET-OUR-NEWSLETTER">GET OUR NEWSLETTER</span>
