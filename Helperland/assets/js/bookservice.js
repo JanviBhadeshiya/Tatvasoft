@@ -13,6 +13,7 @@ $(document).ready(function(){
     var time;
     var extraserv=[] ;
      var base_url = "http://localhost:8080/Helperland/";
+     var base_url1 = "http://localhost:8080/Helperland/Customer.php";
        function switchtab(from, to )
     {
         $("#pills-"+from+"-tab").removeClass("active");
@@ -427,7 +428,7 @@ $(document).ready(function(){
                     
                   }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = base_url;
+                        window.location.href = base_url1;
                     }
                       
                   });

@@ -218,7 +218,7 @@ $(document).ready(function () {
         
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "Your Service will be deleted permanantly!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
